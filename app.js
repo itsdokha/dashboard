@@ -449,26 +449,72 @@ const GitHubAPI = {
     },
 
     async getLanguages() {
-        const repos = await this.getRepos();
-        if (!repos) return null;
-
-        const langBytes = {};
-        for (const repo of repos) {
-            if (repo.language) {
-                langBytes[repo.language] = (langBytes[repo.language] || 0) + (repo.size || 1);
+        // Use GraphQL to get languages from all repos
+        const query = `
+            query {
+                user(login: "${CONFIG.github.username}") {
+                    repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+                        nodes {
+                            languages(first: 10, orderBy: {field: SIZE, direction: DESC}) {
+                                edges {
+                                    size
+                                    node {
+                                        name
+                                        color
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
+        `;
+
+        try {
+            const response = await fetch('https://api.github.com/graphql', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `bearer ${CONFIG.github.token}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ query }),
+            });
+
+            const data = await response.json();
+            const repos = data.data?.user?.repositories?.nodes;
+            if (!repos) return null;
+
+            // Aggregate language bytes
+            const langBytes = {};
+            for (const repo of repos) {
+                for (const edge of (repo.languages?.edges || [])) {
+                    const name = edge.node.name;
+                    langBytes[name] = (langBytes[name] || 0) + edge.size;
+                }
+            }
+
+            const total = Object.values(langBytes).reduce((a, b) => a + b, 0);
+            if (total === 0) return null;
+
+            const languages = Object.entries(langBytes)
+                .map(([name, bytes]) => ({
+                    name,
+                    percent: Math.round((bytes / total) * 100),
+                }))
+                .sort((a, b) => b.percent - a.percent)
+                .slice(0, 6);
+
+            // Ensure percentages sum to ~100
+            const sum = languages.reduce((a, b) => a + b.percent, 0);
+            if (sum < 100 && languages.length > 0) {
+                languages[0].percent += (100 - sum);
+            }
+
+            return languages;
+        } catch (error) {
+            console.error('GitHub GraphQL languages error:', error);
+            return null;
         }
-
-        const total = Object.values(langBytes).reduce((a, b) => a + b, 0);
-        const languages = Object.entries(langBytes)
-            .map(([name, bytes]) => ({
-                name,
-                percent: Math.round((bytes / total) * 100),
-            }))
-            .sort((a, b) => b.percent - a.percent)
-            .slice(0, 6);
-
-        return languages;
     },
 
     async getStats() {
@@ -1027,7 +1073,7 @@ async function renderActivity() {
 
                 switch (event.type) {
                     case 'PushEvent':
-                        const commits = event.payload?.commits?.length || 0;
+                        const commits = event.payload?.size || event.payload?.commits?.length || 1;
                         message = `Pushed ${commits} commit${commits !== 1 ? 's' : ''}`;
                         break;
                     case 'PullRequestEvent':

@@ -181,7 +181,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 40px 20px;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 /* Widget Base */
@@ -193,9 +193,8 @@ body {
     backdrop-filter: blur(10px);
     transition: all var(--transition-base);
     position: relative;
-    overflow: hidden;
-    max-width: 100%;
-    word-wrap: break-word;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .widget::before {
@@ -1432,42 +1431,64 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        padding: 16px 12px;
-        overflow-x: hidden;
+        padding: 16px 10px;
+        width: 100%;
     }
 
     .stats-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 10px;
     }
 
     .stat-card {
-        padding: 16px 12px;
+        padding: 14px 10px;
     }
 
     .stat-value {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .widget {
-        padding: 16px;
-        max-width: 100%;
-        overflow: hidden;
+        padding: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .widget-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .widget-header h2 {
+        font-size: 14px;
     }
 
     .book-item {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        gap: 12px;
     }
 
     .book-cover {
-        width: 100%;
-        height: 150px;
+        width: 60px;
+        height: 90px;
+        flex-shrink: 0;
+    }
+
+    .book-title {
+        font-size: 14px;
+    }
+
+    .book-author {
+        font-size: 12px;
     }
 
     .social-link {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .social-links {
+        gap: 8px;
     }
 
     .tabs {
@@ -1477,15 +1498,25 @@ body {
     .tab {
         flex: 1;
         text-align: center;
+        padding: 6px 10px;
+        font-size: 12px;
     }
 
     .movies-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 8px;
+    }
+
+    .movie-card {
+        min-height: 160px;
+    }
+
+    .movie-title {
+        font-size: 11px;
     }
 
     .repos-grid {
-        gap: 10px;
+        gap: 8px;
     }
 
     .repo-card {
@@ -1494,64 +1525,132 @@ body {
 
     .repo-name {
         font-size: 13px;
-        word-break: break-word;
     }
 
     .repo-desc {
-        font-size: 12px;
+        font-size: 11px;
         -webkit-line-clamp: 2;
     }
 
     .repo-meta {
-        flex-wrap: wrap;
-        gap: 6px;
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .repo-time {
+        display: none;
+    }
+
+    .activity-feed {
+        gap: 0;
     }
 
     .activity-item {
         padding: 10px 0;
     }
 
-    .activity-text {
-        font-size: 13px;
-        word-break: break-word;
+    .activity-icon {
+        width: 28px;
+        height: 28px;
     }
 
-    .activity-text a {
-        word-break: break-all;
+    .activity-text {
+        font-size: 12px;
     }
 
     .server-item {
-        padding: 10px 12px;
+        padding: 10px;
     }
 
     .server-name {
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .server-latency {
+        font-size: 11px;
     }
 
     .spotify-track {
-        padding: 8px 10px;
+        padding: 8px;
+        gap: 10px;
+    }
+
+    .track-cover {
+        width: 40px;
+        height: 40px;
     }
 
     .track-name {
         font-size: 13px;
     }
 
+    .track-artist {
+        font-size: 11px;
+    }
+
+    .track-time {
+        font-size: 10px;
+    }
+
+    .track-link {
+        width: 28px;
+        height: 28px;
+    }
+
+    .languages-bar {
+        height: 8px;
+    }
+
     .languages-legend {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
+        gap: 8px;
+    }
+
+    .lang-item {
+        font-size: 11px;
     }
 
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 8px;
     }
 
     .skill-item {
-        padding: 10px 8px;
+        padding: 10px 6px;
+        min-height: 70px;
+    }
+
+    .skill-icon {
+        width: 28px;
+        height: 28px;
     }
 
     .skill-name {
-        font-size: 10px;
+        font-size: 9px;
+    }
+
+    .hero-card {
+        padding: 24px 16px;
+    }
+
+    .hero-name {
+        font-size: 22px;
+    }
+
+    .hero-role {
+        font-size: 14px;
+    }
+
+    .hero-quote {
+        font-size: 12px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .servers-summary {
+        font-size: 12px;
     }
 }
 
