@@ -29,6 +29,8 @@ jobs:
               -e "s|{{LASTFM_API_KEY}}|${{ secrets.LASTFM_API_KEY }}|g" \
               -e "s|{{TMDB_API_KEY}}|${{ secrets.TMDB_API_KEY }}|g" \
               config.template.js > config.js
+          # Remove config.js from .gitignore so it gets included in artifact
+          sed -i '/^config\.js$/d' .gitignore
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
