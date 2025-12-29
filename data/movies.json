@@ -1,0 +1,155 @@
+{
+  "watching": [
+    {
+      "id": "1",
+      "type": "series",
+      "title": "Breaking Bad",
+      "original_title": null,
+      "year": 2008,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+      "status": "watching",
+      "watched_at": null,
+      "progress": {
+        "season": 4,
+        "episode": 8,
+        "episodes_watched": 41,
+        "episodes_total": 62
+      },
+      "rating": 9.5,
+      "genres": ["Crime", "Drama", "Thriller"],
+      "tags": [],
+      "note": null,
+      "external_ids": {
+        "tmdb": 1396,
+        "imdb": "tt0903747"
+      },
+      "links": {
+        "primary": "https://www.imdb.com/title/tt0903747/"
+      }
+    },
+    {
+      "id": "2",
+      "type": "series",
+      "title": "The Last of Us",
+      "original_title": null,
+      "year": 2023,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_.jpg",
+      "status": "watching",
+      "watched_at": null,
+      "progress": {
+        "season": 1,
+        "episode": 5,
+        "episodes_watched": 5,
+        "episodes_total": 9
+      },
+      "rating": 9.0,
+      "genres": ["Action", "Adventure", "Drama"],
+      "tags": [],
+      "note": null,
+      "external_ids": {
+        "tmdb": 100088,
+        "imdb": "tt3581920"
+      },
+      "links": {
+        "primary": "https://www.imdb.com/title/tt3581920/"
+      }
+    }
+  ],
+  "watched": [
+    {
+      "id": "3",
+      "type": "movie",
+      "title": "Oppenheimer",
+      "original_title": null,
+      "year": 2023,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg",
+      "status": "watched",
+      "watched_at": "2024-12-15",
+      "progress": null,
+      "rating": 9.0,
+      "genres": ["Biography", "Drama", "History"],
+      "tags": ["nolan", "oscar"],
+      "note": "Masterpiece of cinema. Cillian Murphy was incredible.",
+      "external_ids": {
+        "tmdb": 872585,
+        "imdb": "tt15398776"
+      },
+      "links": {
+        "primary": "https://www.imdb.com/title/tt15398776/"
+      }
+    },
+    {
+      "id": "4",
+      "type": "movie",
+      "title": "Dune: Part Two",
+      "original_title": null,
+      "year": 2024,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BN2QyZGU4ZDctOWMzMy00NTc5LThlOGQtODhmNDI1NmY5YzAwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+      "status": "watched",
+      "watched_at": "2024-12-01",
+      "progress": null,
+      "rating": 8.8,
+      "genres": ["Action", "Adventure", "Drama"],
+      "tags": ["denis-villeneuve", "sci-fi"],
+      "note": "Even better than the first one. The visuals are stunning.",
+      "external_ids": {
+        "tmdb": 693134,
+        "imdb": "tt15239678"
+      },
+      "links": {
+        "primary": "https://www.imdb.com/title/tt15239678/"
+      }
+    },
+    {
+      "id": "5",
+      "type": "movie",
+      "title": "Interstellar",
+      "original_title": null,
+      "year": 2014,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "status": "watched",
+      "watched_at": "2024-11-20",
+      "progress": null,
+      "rating": 9.5,
+      "genres": ["Adventure", "Drama", "Sci-Fi"],
+      "tags": ["nolan", "sci-fi", "favorite"],
+      "note": "Timeless classic. The docking scene still gives me chills.",
+      "external_ids": {
+        "tmdb": 157336,
+        "imdb": "tt0816692"
+      },
+      "links": {
+        "primary": "https://www.imdb.com/title/tt0816692/"
+      }
+    },
+    {
+      "id": "6",
+      "type": "series",
+      "title": "Chernobyl",
+      "original_title": null,
+      "year": 2019,
+      "poster_url": "https://m.media-amazon.com/images/M/MV5BNTdkN2QwMDItMjU2Zi00OGY2LTk4NzMtZjQ3NmExMjkxZDNlXkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+      "status": "watched",
+      "watched_at": "2024-10-15",
+      "progress": {
+        "season": 1,
+        "episode": 5,
+        "episodes_watched": 5,
+        "episodes_total": 5
+      },
+      "rating": 9.4,
+      "genres": ["Drama", "History", "Thriller"],
+      "tags": ["hbo", "miniseries"],
+      "note": "Haunting and powerful. Everyone should watch this.",
+      "external_ids": {
+        "tmdb": 87108,
+        "imdb": "tt7366338"
+      },
+      "links": {
+        "primary": "https://www.imdb.com/title/tt7366338/"
+      }
+    }
+  ],
+  "dropped": [],
+  "on_hold": []
+}

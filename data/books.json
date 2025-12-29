@@ -1,0 +1,117 @@
+{
+  "reading": [
+    {
+      "id": "1",
+      "title": "System Design Interview",
+      "original_title": null,
+      "authors": ["Alex Xu"],
+      "year": 2020,
+      "cover_url": "https://m.media-amazon.com/images/I/71xLDGjPFnL._AC_UF1000,1000_QL80_.jpg",
+      "status": "reading",
+      "started_at": "2024-12-01",
+      "finished_at": null,
+      "progress": {
+        "type": "percent",
+        "current": 65,
+        "total": 100
+      },
+      "rating": null,
+      "tags": ["tech", "interview", "system-design"],
+      "note": null,
+      "links": {
+        "primary": "https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Clean Architecture",
+      "original_title": "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
+      "authors": ["Robert C. Martin"],
+      "year": 2017,
+      "cover_url": "https://m.media-amazon.com/images/I/61r4tYVsRVL._AC_UF1000,1000_QL80_.jpg",
+      "status": "reading",
+      "started_at": "2024-12-10",
+      "finished_at": null,
+      "progress": {
+        "type": "percent",
+        "current": 30,
+        "total": 100
+      },
+      "rating": null,
+      "tags": ["tech", "architecture", "clean-code"],
+      "note": null,
+      "links": {
+        "primary": "https://www.amazon.com/Clean-Architecture-Craftsmans-Software-Structure/dp/0134494164"
+      }
+    }
+  ],
+  "finished": [
+    {
+      "id": "3",
+      "title": "The Pragmatic Programmer",
+      "original_title": "The Pragmatic Programmer: Your Journey to Mastery",
+      "authors": ["David Thomas", "Andrew Hunt"],
+      "year": 2019,
+      "cover_url": "https://m.media-amazon.com/images/I/71VStSjZmpL._AC_UF1000,1000_QL80_.jpg",
+      "status": "finished",
+      "started_at": "2024-10-01",
+      "finished_at": "2024-11-15",
+      "progress": {
+        "type": "percent",
+        "current": 100,
+        "total": 100
+      },
+      "rating": 5,
+      "tags": ["tech", "programming", "best-practices"],
+      "note": "Must-read for every developer. Full of practical advice.",
+      "links": {
+        "primary": "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Designing Data-Intensive Applications",
+      "original_title": null,
+      "authors": ["Martin Kleppmann"],
+      "year": 2017,
+      "cover_url": "https://m.media-amazon.com/images/I/91pzJFFTerL._AC_UF1000,1000_QL80_.jpg",
+      "status": "finished",
+      "started_at": "2024-08-01",
+      "finished_at": "2024-09-20",
+      "progress": {
+        "type": "percent",
+        "current": 100,
+        "total": 100
+      },
+      "rating": 5,
+      "tags": ["tech", "databases", "distributed-systems"],
+      "note": "The definitive guide to data systems. Changed how I think about architecture.",
+      "links": {
+        "primary": "https://dataintensive.net/"
+      }
+    },
+    {
+      "id": "5",
+      "title": "You Don't Know JS Yet",
+      "original_title": "You Don't Know JS Yet: Get Started",
+      "authors": ["Kyle Simpson"],
+      "year": 2020,
+      "cover_url": "https://m.media-amazon.com/images/I/71t-hy1BFDL._AC_UF1000,1000_QL80_.jpg",
+      "status": "finished",
+      "started_at": "2024-06-01",
+      "finished_at": "2024-07-10",
+      "progress": {
+        "type": "percent",
+        "current": 100,
+        "total": 100
+      },
+      "rating": 4,
+      "tags": ["tech", "javascript", "fundamentals"],
+      "note": "Deep dive into JS. Some parts are very technical but worth it.",
+      "links": {
+        "primary": "https://github.com/getify/You-Dont-Know-JS"
+      }
+    }
+  ],
+  "dropped": []
+}
