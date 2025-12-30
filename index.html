@@ -6,31 +6,31 @@
     <title>Dashboard | Personal Hub</title>
     <meta name="description" content="Personal dashboard - GitHub stats, books, movies, servers, and more">
 
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="theme-color" content="#0a0a0f">
 
-    <!-- Open Graph -->
+    
     <meta property="og:title" content="Dashboard | Personal Hub">
     <meta property="og:description" content="Personal dashboard with GitHub stats, books, movies, and more">
     <meta property="og:type" content="website">
     <meta property="og:image" content="favicon.svg">
 
-    <!-- Twitter Card -->
+    
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Dashboard | Personal Hub">
     <meta name="twitter:description" content="Personal dashboard with GitHub stats, books, movies, and more">
 
-    <!-- Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Animated Background -->
+    <!-- фон -->
     <div class="bg-decoration">
         <div class="bg-gradient"></div>
         <div class="bg-grid"></div>
@@ -44,7 +44,7 @@
     </div>
 
     <main class="container">
-        <!-- Hero Profile -->
+        <!-- профиль -->
         <section class="hero-card widget animate-fade-in shine border-beam">
             <div class="hero-glow"></div>
             <div class="hero-content">
@@ -73,7 +73,7 @@
                     </blockquote>
                 </div>
                 <div class="social-links" id="social-links">
-                    <!-- Filled by JS -->
+                    
                 </div>
             </div>
             <footer class="hero-footer">
@@ -81,7 +81,7 @@
             </footer>
         </section>
 
-        <!-- GitHub Stats Grid -->
+        <!-- статистика -->
         <section class="stats-grid animate-fade-in delay-1">
             <div class="stat-card widget">
                 <div class="stat-icon">
@@ -127,7 +127,7 @@
             </div>
         </section>
 
-        <!-- Technical Expertise -->
+        <!-- скиллы -->
         <section class="widget skills-widget animate-fade-in delay-2">
             <div class="widget-header">
                 <h2>
@@ -149,11 +149,11 @@
             </div>
         </section>
 
-        <!-- Two Column Layout -->
+        
         <div class="two-columns">
-            <!-- Left Column -->
+            
             <div class="column">
-                <!-- Pinned Repos -->
+                <!-- репозитории -->
                 <section class="widget animate-fade-in delay-2">
                     <div class="widget-header">
                         <h2>
@@ -166,14 +166,14 @@
                         <a href="#" class="widget-link" id="github-profile-link">View all</a>
                     </div>
                     <div class="repos-grid" id="pinned-repos">
-                        <!-- Skeleton loading -->
+                        
                         <div class="repo-card skeleton"></div>
                         <div class="repo-card skeleton"></div>
                         <div class="repo-card skeleton"></div>
                     </div>
                 </section>
 
-                <!-- Languages -->
+                <!-- языки -->
                 <section class="widget animate-fade-in delay-3">
                     <div class="widget-header">
                         <h2>
@@ -188,11 +188,11 @@
                         <div class="lang-bar-skeleton skeleton"></div>
                     </div>
                     <div class="languages-legend" id="languages-legend">
-                        <!-- Filled by JS -->
+                        
                     </div>
                 </section>
 
-                <!-- Activity -->
+                <!-- активность -->
                 <section class="widget animate-fade-in delay-4">
                     <div class="widget-header">
                         <h2>
@@ -209,7 +209,7 @@
                     </div>
                 </section>
 
-                <!-- Books -->
+                <!-- книги -->
                 <section class="widget animate-fade-in delay-5">
                     <div class="widget-header">
                         <h2>
@@ -231,9 +231,9 @@
                 </section>
             </div>
 
-            <!-- Right Column -->
+            
             <div class="column">
-                <!-- Movies & Series -->
+                <!-- фильмы -->
                 <section class="widget animate-fade-in delay-2">
                     <div class="widget-header">
                         <h2>
@@ -261,7 +261,7 @@
                     </div>
                 </section>
 
-                <!-- Servers -->
+                <!-- серверы -->
                 <section class="widget animate-fade-in delay-3">
                     <div class="widget-header">
                         <h2>
@@ -294,7 +294,7 @@
                     </div>
                 </section>
 
-                <!-- Spotify -->
+                <!-- музыка -->
                 <section class="widget spotify-widget animate-fade-in delay-4">
                     <div class="widget-header">
                         <h2>
@@ -314,10 +314,10 @@
         </div>
     </main>
 
-    <!-- Toast notifications -->
+    
     <div class="toast-container" id="toast-container"></div>
 
-    <!-- Secrets (not committed to git) -->
+    
     <script src="config.js"></script>
     <script src="app.js"></script>
 </body>
