@@ -30,17 +30,17 @@ const CONFIG = {
     },
     books: {
         useOpenLibrary: true,
-        // Add books by ISBN - info will be fetched automatically
-        // Simple: just ISBN string
-        // With options: { isbn: '...', progress: 50, rating: 5 }
+        // Add books by Open Library edition key (OL...M) from URL
+        // Example: openlibrary.org/books/OL26375433M -> 'OL26375433M'
         reading: [
-            '9781984821126',  // System Design Interview Vol 1
-            '9780134494166',  // Clean Architecture
+            'OL22007893M',  // Le Petit Prince
+            'OL38290995M',  // Atomic Habits
         ],
         finished: [
-            '9780135957059',  // The Pragmatic Programmer
-            '9781449373320',  // Designing Data-Intensive Applications
-            '9781491950357',  // You Don't Know JS
+            'OL26375433M',  // An Ember in the Ashes
+            'OL27213819M',  // A Torch Against the Night
+            'OL26956755M',  // A Reaper at the Gates
+            'OL37760229M',  // A Sky Beyond the Storm
         ],
     },
     profile: {
@@ -339,28 +339,33 @@ const MOCK_DATA = {
         },
     ],
     skills: [
-        // Languages
-        { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', category: 'language' },
-        { name: 'Go', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg', category: 'language' },
-        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', category: 'language' },
-        { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', category: 'language' },
-        { name: 'Rust', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg', category: 'language' },
-        // Frameworks & Libraries
-        { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg', category: 'framework' },
-        { name: 'Django', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg', category: 'framework' },
-        { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', category: 'framework' },
-        { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', category: 'framework' },
-        // Databases
-        { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', category: 'database' },
-        { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', category: 'database' },
-        { name: 'Redis', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg', category: 'database' },
-        // DevOps & Tools
-        { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', category: 'devops' },
-        { name: 'Kubernetes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg', category: 'devops' },
-        { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: 'devops' },
-        { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', category: 'devops' },
-        { name: 'Nginx', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg', category: 'devops' },
-        { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg', category: 'devops' },
+        // Languages & Web
+        { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+        { name: 'Go', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg' },
+        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+        { name: 'C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg' },
+        { name: 'C++', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+        { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+        { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+        { name: 'ASM x86-64', icon: 'https://cdn.simpleicons.org/assemblyscript/007ACC' },
+        // Tools & Infrastructure
+        { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+        { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+        { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
+        { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+        { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
+        { name: 'Cloudflare', icon: 'https://cdn.simpleicons.org/cloudflare/F38020' },
+        // Protocols & APIs
+        { name: 'REST API', icon: 'https://cdn.simpleicons.org/openapiinitiative/6BA539' },
+        { name: 'Networking', icon: 'https://cdn.simpleicons.org/cisco/1BA0D7' },
+        // Mathematics
+        { name: 'Algebra', icon: 'https://cdn.simpleicons.org/wolframmathematica/DD1100' },
+        { name: 'Probability', icon: 'https://cdn.simpleicons.org/googleanalytics/E37400' },
+        { name: 'Combinatorics', icon: 'https://cdn.simpleicons.org/hackthebox/9FEF00' },
+        { name: 'Statistics', icon: 'https://cdn.simpleicons.org/scipy/8CAAE6' },
+        { name: 'Logic', icon: 'https://cdn.simpleicons.org/probot/00B0D8' },
+        { name: 'Diff. Equations', icon: 'https://cdn.simpleicons.org/sympy/3B5526' },
+        { name: 'Discrete Math', icon: 'https://cdn.simpleicons.org/graphql/E10098' },
     ],
 };
 
@@ -753,9 +758,10 @@ const OpenLibraryAPI = {
     baseUrl: 'https://openlibrary.org',
     coversUrl: 'https://covers.openlibrary.org',
 
-    async getBookByISBN(isbn) {
+    async getBookByEditionKey(editionKey) {
         try {
-            const response = await fetch(`${this.baseUrl}/isbn/${isbn}.json`);
+            // Fetch edition data
+            const response = await fetch(`${this.baseUrl}/books/${editionKey}.json`);
             if (!response.ok) return null;
 
             const data = await response.json();
@@ -777,14 +783,17 @@ const OpenLibraryAPI = {
                 }
             }
 
+            // Get cover - try edition ID first, then ISBN
+            let coverUrl = `${this.coversUrl}/b/olid/${editionKey}-L.jpg`;
+
             return {
                 title: data.title,
                 author: authors.join(', ') || 'Unknown Author',
-                cover: `${this.coversUrl}/b/isbn/${isbn}-L.jpg`,
-                isbn: isbn,
+                cover: coverUrl,
+                editionKey: editionKey,
                 pages: data.number_of_pages || null,
                 publishDate: data.publish_date || null,
-                link: `${this.baseUrl}/isbn/${isbn}`,
+                link: `${this.baseUrl}/books/${editionKey}`,
             };
         } catch (error) {
             console.error('Open Library API error:', error);
@@ -795,12 +804,12 @@ const OpenLibraryAPI = {
     async getBooks(bookList) {
         const books = [];
         for (const item of bookList) {
-            // Support both string ISBN and object { isbn, progress, rating }
-            const isbn = typeof item === 'string' ? item : item.isbn;
+            // Support both string key and object { key, progress, rating }
+            const key = typeof item === 'string' ? item : item.key;
             const progress = typeof item === 'object' ? item.progress : null;
             const rating = typeof item === 'object' ? item.rating : null;
 
-            const bookData = await this.getBookByISBN(isbn);
+            const bookData = await this.getBookByEditionKey(key);
             if (bookData) {
                 books.push({
                     ...bookData,
@@ -1357,16 +1366,12 @@ async function renderSkills() {
     const container = $('#skills-grid');
     if (!container) return;
 
-    const categories = {
-        language: 'Languages',
-        framework: 'Frameworks',
-        database: 'Databases',
-        devops: 'DevOps & Tools',
-    };
-
     container.innerHTML = MOCK_DATA.skills.map(skill => `
-        <div class="skill-item" title="${skill.name}">
-            <img src="${skill.icon}" alt="${skill.name}" class="skill-icon" loading="lazy">
+        <div class="skill-item ${skill.icon ? '' : 'no-icon'}" title="${skill.name}">
+            ${skill.icon
+                ? `<img src="${skill.icon}" alt="${skill.name}" class="skill-icon" loading="lazy">`
+                : `<span class="skill-icon-text">${skill.name.substring(0, 2).toUpperCase()}</span>`
+            }
             <span class="skill-name">${skill.name}</span>
         </div>
     `).join('');
