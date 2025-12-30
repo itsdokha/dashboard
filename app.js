@@ -1,10 +1,6 @@
-/**
- * Personal Dashboard - Main JavaScript
- */
+// главный
 
-// ========================================
-// Configuration
-// ========================================
+// настройки
 const CONFIG = {
     github: {
         username: 'itsdokha',
@@ -30,17 +26,16 @@ const CONFIG = {
     },
     books: {
         useOpenLibrary: true,
-        // Add books by Open Library edition key (OL...M) from URL
-        // Example: openlibrary.org/books/OL26375433M -> 'OL26375433M'
+        // книги
         reading: [
-            'OL22007893M',  // Le Petit Prince
-            'OL38290995M',  // Atomic Habits
+            'OL22007893M',
+            'OL38290995M',
         ],
         finished: [
-            'OL26375433M',  // An Ember in the Ashes
-            'OL27213819M',  // A Torch Against the Night
-            'OL26956755M',  // A Reaper at the Gates
-            'OL37760229M',  // A Sky Beyond the Storm
+            'OL26375433M',
+            'OL27213819M',
+            'OL26956755M',
+            'OL37760229M',
         ],
     },
     profile: {
@@ -64,7 +59,7 @@ const CONFIG = {
     },
 };
 
-// Language colors for GitHub
+// цвета
 const LANG_COLORS = {
     JavaScript: '#f1e05a',
     TypeScript: '#3178c6',
@@ -88,9 +83,7 @@ const LANG_COLORS = {
     Dockerfile: '#384d54',
 };
 
-// ========================================
-// Icons SVG
-// ========================================
+// иконки
 const ICONS = {
     github: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
     telegram: `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>`,
@@ -106,9 +99,7 @@ const ICONS = {
     play: `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
 };
 
-// ========================================
-// Mock Data
-// ========================================
+// данные
 const MOCK_DATA = {
     stats: {
         repos: 42,
@@ -339,7 +330,7 @@ const MOCK_DATA = {
         },
     ],
     skills: [
-        // Languages & Web
+        // языки
         { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
         { name: 'Go', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg' },
         { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
@@ -348,17 +339,17 @@ const MOCK_DATA = {
         { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
         { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
         { name: 'ASM x86-64', icon: 'https://cdn.simpleicons.org/assemblyscript/007ACC' },
-        // Tools & Infrastructure
+        // инструменты
         { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
         { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
         { name: 'Linux', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
         { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
         { name: 'GitLab', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
         { name: 'Cloudflare', icon: 'https://cdn.simpleicons.org/cloudflare/F38020' },
-        // Protocols & APIs
+        // протоколы
         { name: 'REST API', icon: 'https://cdn.simpleicons.org/openapiinitiative/6BA539' },
         { name: 'Networking', icon: 'https://cdn.simpleicons.org/cisco/1BA0D7' },
-        // Mathematics
+        // математика
         { name: 'Algebra', icon: 'https://cdn.simpleicons.org/wolframmathematica/DD1100' },
         { name: 'Probability', icon: 'https://cdn.simpleicons.org/googleanalytics/E37400' },
         { name: 'Combinatorics', icon: 'https://cdn.simpleicons.org/hackthebox/9FEF00' },
@@ -369,9 +360,7 @@ const MOCK_DATA = {
     ],
 };
 
-// ========================================
-// GitHub API Functions
-// ========================================
+// гитхаб
 const GitHubAPI = {
     baseUrl: 'https://api.github.com',
 
@@ -408,7 +397,7 @@ const GitHubAPI = {
     },
 
     async getPinnedRepos() {
-        // GraphQL query for pinned repos
+        // запрос
         const query = `
             query {
                 user(login: "${CONFIG.github.username}") {
@@ -454,7 +443,7 @@ const GitHubAPI = {
     },
 
     async getLanguages() {
-        // Use GraphQL to get languages from all repos
+        // языки
         const query = `
             query {
                 user(login: "${CONFIG.github.username}") {
@@ -489,7 +478,7 @@ const GitHubAPI = {
             const repos = data.data?.user?.repositories?.nodes;
             if (!repos) return null;
 
-            // Aggregate language bytes
+            // подсчёт
             const langBytes = {};
             for (const repo of repos) {
                 for (const edge of (repo.languages?.edges || [])) {
@@ -509,7 +498,7 @@ const GitHubAPI = {
                 .sort((a, b) => b.percent - a.percent)
                 .slice(0, 6);
 
-            // Ensure percentages sum to ~100
+            // проценты
             const sum = languages.reduce((a, b) => a + b.percent, 0);
             if (sum < 100 && languages.length > 0) {
                 languages[0].percent += (100 - sum);
@@ -541,9 +530,7 @@ const GitHubAPI = {
     },
 };
 
-// ========================================
-// Telegram API Functions
-// ========================================
+// телеграм
 const TelegramAPI = {
     baseUrl: 'https://api.telegram.org',
 
@@ -564,9 +551,7 @@ const TelegramAPI = {
     },
 
     async getStatus() {
-        // Telegram Bot API не даёт напрямую online/offline статус
-        // Но мы можем получить bio и фото профиля
-        // Для реального статуса нужен MTProto или Telegram Premium
+        // статус
 
         const chat = await this.getChat();
         if (chat) {
@@ -576,7 +561,7 @@ const TelegramAPI = {
                 username: chat.username,
                 bio: chat.bio,
                 photo: chat.photo,
-                // Статус определяем по времени (можно настроить)
+                // время
                 status: this.getTimeBasedStatus(),
             };
         }
@@ -584,9 +569,9 @@ const TelegramAPI = {
     },
 
     getTimeBasedStatus() {
-        // Автоматический статус по времени (UTC+3)
+        // часы
         const now = new Date();
-        const hours = (now.getUTCHours() + 3) % 24; // UTC+3
+        const hours = (now.getUTCHours() + 3) % 24;
 
         if (hours >= 0 && hours < 7) {
             return { status: 'sleeping', text: 'Sleeping...' };
@@ -602,9 +587,7 @@ const TelegramAPI = {
     },
 };
 
-// ========================================
-// Last.fm API Functions
-// ========================================
+// музыка
 const LastFmAPI = {
     baseUrl: 'https://ws.audioscrobbler.com/2.0/',
 
@@ -630,7 +613,7 @@ const LastFmAPI = {
     },
 
     async getRecentTracks(limit = 10) {
-        // Fetch more to filter duplicates
+        // треки
         const data = await this.fetch('user.getrecenttracks', { limit: 50 });
         if (data?.recenttracks?.track) {
             const seen = new Set();
@@ -642,7 +625,7 @@ const LastFmAPI = {
                 const key = `${trackName}-${artistName}`;
                 if (!seen.has(key)) {
                     seen.add(key);
-                    // Create Spotify search URL
+                    // ссылка
                     const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(trackName + ' ' + artistName)}`;
                     uniqueTracks.push({
                         name: trackName,
@@ -670,9 +653,7 @@ const LastFmAPI = {
     },
 };
 
-// ========================================
-// TMDB API Functions
-// ========================================
+// фильмы
 const TMDB_API = {
     baseUrl: 'https://api.themoviedb.org/3',
     imageBaseUrl: 'https://image.tmdb.org/t/p/w500',
@@ -694,13 +675,13 @@ const TMDB_API = {
     },
 
     async getList(listId) {
-        // TMDB lists can have multiple pages
+        // страницы
         const firstPage = await this.fetch(`/list/${listId}?language=en-US&page=1`);
         if (!firstPage) return null;
 
         let allItems = [...(firstPage.items || [])];
 
-        // Fetch additional pages if needed
+        // дополнительные
         const totalPages = firstPage.total_pages || 1;
         for (let page = 2; page <= totalPages && page <= 5; page++) {
             const nextPage = await this.fetch(`/list/${listId}?language=en-US&page=${page}`);
@@ -743,7 +724,7 @@ const TMDB_API = {
         }));
     },
 
-    // Get IMDB ID for a movie/series
+    // идентификатор
     async getExternalIds(id, type) {
         const mediaType = type === 'series' ? 'tv' : 'movie';
         const data = await this.fetch(`/${mediaType}/${id}/external_ids`);
@@ -751,22 +732,20 @@ const TMDB_API = {
     },
 };
 
-// ========================================
-// Open Library API Functions
-// ========================================
+// библиотека
 const OpenLibraryAPI = {
     baseUrl: 'https://openlibrary.org',
     coversUrl: 'https://covers.openlibrary.org',
 
     async getBookByEditionKey(editionKey) {
         try {
-            // Fetch edition data
+            // книга
             const response = await fetch(`${this.baseUrl}/books/${editionKey}.json`);
             if (!response.ok) return null;
 
             const data = await response.json();
 
-            // Get author names
+            // авторы
             let authors = [];
             if (data.authors) {
                 for (const authorRef of data.authors) {
@@ -783,7 +762,7 @@ const OpenLibraryAPI = {
                 }
             }
 
-            // Get cover - try edition ID first, then ISBN
+            // обложка
             let coverUrl = `${this.coversUrl}/b/olid/${editionKey}-L.jpg`;
 
             return {
@@ -804,7 +783,7 @@ const OpenLibraryAPI = {
     async getBooks(bookList) {
         const books = [];
         for (const item of bookList) {
-            // Support both string key and object { key, progress, rating }
+            // ключ
             const key = typeof item === 'string' ? item : item.key;
             const progress = typeof item === 'object' ? item.progress : null;
             const rating = typeof item === 'object' ? item.rating : null;
@@ -822,9 +801,7 @@ const OpenLibraryAPI = {
     },
 };
 
-// ========================================
-// Utility Functions
-// ========================================
+// утилиты
 function $(selector) {
     return document.querySelector(selector);
 }
@@ -865,9 +842,7 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// ========================================
-// Render Functions
-// ========================================
+// рендер
 async function renderProfile() {
     const { name, role, timezone, avatar, quote } = CONFIG.profile;
     let statusData = CONFIG.status;
@@ -878,12 +853,12 @@ async function renderProfile() {
     $('#avatar').src = avatar;
     $('#current-year').textContent = new Date().getFullYear();
 
-    // Quote
+    // цитата
     if (quote) {
         $('#hero-quote .quote-text').textContent = quote;
     }
 
-    // Get Telegram status
+    // статус
     if (CONFIG.telegram.useRealAPI) {
         const telegramStatus = await TelegramAPI.getStatus();
         if (telegramStatus?.status) {
@@ -891,12 +866,12 @@ async function renderProfile() {
         }
     }
 
-    // Status
+    // индикатор
     const statusIndicator = $('#status-indicator');
     statusIndicator.classList.add(statusData.status || statusData.current);
     $('#status-text').textContent = statusData.text;
 
-    // Social links
+    // соцсети
     const socialsContainer = $('#social-links');
     socialsContainer.innerHTML = CONFIG.socials.map(social => `
         <a href="${social.url}" class="social-link"
@@ -908,7 +883,7 @@ async function renderProfile() {
         </a>
     `).join('');
 
-    // Copy email on click
+    // копировать
     socialsContainer.querySelectorAll('[data-copy]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -917,7 +892,7 @@ async function renderProfile() {
         });
     });
 
-    // GitHub profile link
+    // профиль
     $('#github-profile-link').href = `https://github.com/${CONFIG.github.username}`;
 }
 
@@ -927,12 +902,12 @@ async function renderStats() {
     if (CONFIG.github.useRealAPI) {
         stats = await GitHubAPI.getStats();
         if (stats) {
-            // Update avatar with real GitHub avatar
+            // аватар
             $('#avatar').src = stats.avatar;
         }
     }
 
-    // Fallback to mock data if API fails
+    // резерв
     if (!stats) {
         await delay(800);
         stats = MOCK_DATA.stats;
@@ -976,7 +951,7 @@ async function renderPinnedRepos() {
                 updatedAt: repo.updatedAt,
             }));
         } else {
-            // If no pinned repos, get top starred repos
+            // топ
             const allRepos = await GitHubAPI.getRepos();
             if (allRepos) {
                 repos = allRepos
@@ -996,7 +971,7 @@ async function renderPinnedRepos() {
         }
     }
 
-    // Fallback to mock data
+    // резерв
     if (!repos) {
         await delay(1000);
         repos = MOCK_DATA.pinnedRepos.map(repo => ({
@@ -1039,7 +1014,7 @@ async function renderLanguages() {
         languages = await GitHubAPI.getLanguages();
     }
 
-    // Fallback to mock data
+    // резерв
     if (!languages) {
         await delay(1200);
         languages = MOCK_DATA.languages;
@@ -1119,7 +1094,7 @@ async function renderActivity() {
         }
     }
 
-    // Fallback to mock data
+    // резерв
     if (!activities) {
         await delay(1400);
         activities = MOCK_DATA.activity.map(item => ({
@@ -1155,7 +1130,7 @@ async function renderBooks(tab = 'reading') {
         }
     }
 
-    // Fallback to mock data
+    // резерв
     if (!books || books.length === 0) {
         await delay(1000);
         books = MOCK_DATA.books[tab] || [];
@@ -1216,7 +1191,7 @@ async function renderMovies(tab = 'watching') {
         }
     }
 
-    // Fallback to mock data
+    // резерв
     if (!movies || movies.length === 0) {
         await delay(1100);
         movies = MOCK_DATA.movies[tab] || [];
@@ -1227,11 +1202,11 @@ async function renderMovies(tab = 'watching') {
         return;
     }
 
-    // Limit to first 12 items for display
+    // лимит
     const displayMovies = movies.slice(0, 12);
 
     container.innerHTML = displayMovies.map(movie => {
-        // TMDB link (works for all movies from TMDB)
+        // ссылка
         const tmdbUrl = movie.id ? `https://www.themoviedb.org/${movie.type === 'series' ? 'tv' : 'movie'}/${movie.id}` : null;
         const imdbUrl = movie.imdb_id ? `https://www.imdb.com/title/${movie.imdb_id}/` : null;
         const linkUrl = imdbUrl || tmdbUrl;
@@ -1292,7 +1267,7 @@ async function renderSpotify() {
         tracks = await LastFmAPI.getRecentTracks(10);
     }
 
-    // Fallback to mock data
+    // резерв
     if (!tracks || tracks.length === 0) {
         await delay(1300);
         tracks = MOCK_DATA.spotify.map(t => ({
@@ -1322,11 +1297,9 @@ async function renderSpotify() {
     `).join('');
 }
 
-// ========================================
-// Event Listeners
-// ========================================
+// события
 function setupTabs() {
-    // Books tabs
+    // книги
     const booksTabs = $('#books-tabs');
     booksTabs.addEventListener('click', (e) => {
         if (e.target.classList.contains('tab')) {
@@ -1336,7 +1309,7 @@ function setupTabs() {
         }
     });
 
-    // Movies tabs
+    // фильмы
     const moviesTabs = $('#movies-tabs');
     moviesTabs.addEventListener('click', (e) => {
         if (e.target.classList.contains('tab')) {
@@ -1357,9 +1330,7 @@ function setupRefreshButton() {
     });
 }
 
-// ========================================
-// Skills
-// ========================================
+// навыки
 async function renderSkills() {
     await delay(600);
 
@@ -1377,15 +1348,13 @@ async function renderSkills() {
     `).join('');
 }
 
-// ========================================
-// Initialize
-// ========================================
+// запуск
 async function init() {
     renderProfile();
     setupTabs();
     setupRefreshButton();
 
-    // Load all data
+    // загрузка
     await Promise.all([
         renderStats(),
         renderSkills(),
@@ -1399,5 +1368,5 @@ async function init() {
     ]);
 }
 
-// Start
+// старт
 document.addEventListener('DOMContentLoaded', init);

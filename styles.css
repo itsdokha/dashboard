@@ -1,10 +1,8 @@
-/* ========================================
-   Personal Dashboard - Styles
-   ======================================== */
+/* главный */
 
-/* CSS Variables */
+/* переменные */
 :root {
-    /* Colors */
+    /* цвета */
     --bg-primary: #0a0a0f;
     --bg-secondary: #12121a;
     --bg-card: rgba(18, 18, 26, 0.8);
@@ -24,17 +22,17 @@
     --border-color: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.15);
 
-    /* Shadows */
+    /* тени */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
     --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.15);
 
-    /* Typography */
+    /* шрифты */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-    /* Spacing */
+    /* отступы */
     --container-max: 1200px;
     --gap: 20px;
     --radius-sm: 8px;
@@ -42,13 +40,13 @@
     --radius-lg: 16px;
     --radius-xl: 24px;
 
-    /* Transitions */
+    /* переходы */
     --transition-fast: 0.15s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
-/* Reset & Base */
+/* сброс */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -75,7 +73,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background Decoration */
+/* фон */
 .bg-decoration {
     position: fixed;
     inset: 0;
@@ -109,7 +107,7 @@ body {
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
 }
 
-/* Floating Shapes */
+/* фигуры */
 .floating-shapes {
     position: absolute;
     inset: 0;
@@ -175,7 +173,7 @@ body {
     75% { transform: translate(20px, 10px) scale(1.05); }
 }
 
-/* Container */
+/* контейнер */
 .container {
     max-width: var(--container-max);
     width: 100%;
@@ -184,7 +182,7 @@ body {
     box-sizing: border-box;
 }
 
-/* Widget Base */
+/* виджет */
 .widget {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -251,7 +249,7 @@ body {
     color: var(--accent-primary);
 }
 
-/* Animations */
+/* анимации */
 .animate-fade-in {
     animation: fadeInUp 0.6s ease forwards;
     opacity: 0;
@@ -274,7 +272,7 @@ body {
     }
 }
 
-/* Skeleton Loading */
+/* загрузка */
 .skeleton {
     background: linear-gradient(
         90deg,
@@ -292,9 +290,7 @@ body {
     100% { background-position: -200% 0; }
 }
 
-/* ========================================
-   Hero Card
-   ======================================== */
+/* профиль */
 .hero-card {
     text-align: center;
     padding: 40px 30px;
@@ -420,7 +416,7 @@ body {
     font-size: 13px;
 }
 
-/* Quote */
+/* цитата */
 .hero-quote {
     margin: 0 0 24px 0;
     padding: 0;
@@ -442,7 +438,7 @@ body {
     opacity: 0.5;
 }
 
-/* Social Links */
+/* соцсети */
 .social-links {
     display: flex;
     justify-content: center;
@@ -480,9 +476,7 @@ body {
     color: var(--text-muted);
 }
 
-/* ========================================
-   Stats Grid
-   ======================================== */
+/* статистика */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -538,9 +532,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ========================================
-   Two Column Layout
-   ======================================== */
+/* колонки */
 .two-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -557,9 +549,7 @@ body {
     max-width: 100%;
 }
 
-/* ========================================
-   Repos Grid
-   ======================================== */
+/* репозитории */
 .repos-grid {
     display: grid;
     gap: 12px;
@@ -650,9 +640,7 @@ body {
     height: 14px;
 }
 
-/* ========================================
-   Languages
-   ======================================== */
+/* языки */
 .languages-bar {
     height: 10px;
     border-radius: 5px;
@@ -697,9 +685,7 @@ body {
     font-size: 12px;
 }
 
-/* ========================================
-   Technical Expertise / Skills
-   ======================================== */
+/* навыки */
 .skills-widget {
     margin-bottom: var(--gap);
 }
@@ -792,9 +778,7 @@ body {
     }
 }
 
-/* ========================================
-   Activity Feed
-   ======================================== */
+/* активность */
 .activity-feed {
     display: flex;
     flex-direction: column;
@@ -877,9 +861,7 @@ body {
     margin-top: 4px;
 }
 
-/* ========================================
-   Tabs
-   ======================================== */
+/* вкладки */
 .tabs {
     display: flex;
     gap: 4px;
@@ -909,9 +891,7 @@ body {
     color: var(--accent-primary);
 }
 
-/* ========================================
-   Books
-   ======================================== */
+/* книги */
 .books-list {
     display: flex;
     flex-direction: column;
@@ -1040,9 +1020,7 @@ body {
     color: var(--accent-success);
 }
 
-/* ========================================
-   Movies Grid
-   ======================================== */
+/* фильмы */
 .movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1169,9 +1147,7 @@ body {
     height: 12px;
 }
 
-/* ========================================
-   Servers
-   ======================================== */
+/* серверы */
 .servers-summary {
     display: flex;
     gap: 20px;
@@ -1292,9 +1268,7 @@ body {
     color: var(--text-muted);
 }
 
-/* ========================================
-   Spotify
-   ======================================== */
+/* музыка */
 .spotify-widget .widget-header h2 svg {
     color: #1DB954;
 }
@@ -1387,9 +1361,7 @@ body {
     opacity: 1;
 }
 
-/* ========================================
-   Toast Notifications
-   ======================================== */
+/* уведомления */
 .toast-container {
     position: fixed;
     bottom: 20px;
@@ -1422,9 +1394,7 @@ body {
     }
 }
 
-/* ========================================
-   Responsive
-   ======================================== */
+/* адаптив */
 @media (max-width: 1024px) {
     .two-columns {
         grid-template-columns: 1fr;
@@ -1536,9 +1506,7 @@ body {
     }
 }
 
-/* ========================================
-   Scrollbar
-   ======================================== */
+/* скролл */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -1557,19 +1525,15 @@ body {
     background: var(--border-hover);
 }
 
-/* ========================================
-   Selection
-   ======================================== */
+/* выделение */
 ::selection {
     background: rgba(139, 92, 246, 0.3);
     color: var(--text-primary);
 }
 
-/* ========================================
-   Creative Effects
-   ======================================== */
+/* эффекты */
 
-/* Animated gradient border on hover */
+/* граница */
 .widget.glow-border {
     position: relative;
 }
@@ -1602,7 +1566,7 @@ body {
     50% { background-position: 100% 50%; }
 }
 
-/* Typing cursor effect */
+/* курсор */
 .typing-cursor::after {
     content: '|';
     animation: blink 1s step-end infinite;
@@ -1614,7 +1578,7 @@ body {
     50% { opacity: 0; }
 }
 
-/* Glitch effect for text */
+/* глитч */
 .glitch {
     position: relative;
 }
@@ -1660,7 +1624,7 @@ body {
     80% { transform: translate(-3px, 3px); }
 }
 
-/* Hover lift effect */
+/* подъём */
 .lift-hover {
     transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
@@ -1672,7 +1636,7 @@ body {
         0 0 60px rgba(139, 92, 246, 0.2);
 }
 
-/* Shine effect */
+/* блеск */
 .shine {
     position: relative;
     overflow: hidden;
@@ -1705,7 +1669,7 @@ body {
     }
 }
 
-/* Pulse ring effect */
+/* пульс */
 .pulse-ring {
     position: relative;
 }
@@ -1734,7 +1698,7 @@ body {
     }
 }
 
-/* Neon text */
+/* неон */
 .neon-text {
     text-shadow:
         0 0 5px var(--accent-primary),
@@ -1743,7 +1707,7 @@ body {
         0 0 40px var(--accent-primary);
 }
 
-/* Gradient text animation */
+/* градиент */
 .gradient-text-animated {
     background: linear-gradient(
         90deg,
@@ -1764,7 +1728,7 @@ body {
     50% { background-position: 100% 50%; }
 }
 
-/* Parallax floating */
+/* плавание */
 .float-slow {
     animation: floatSlow 6s ease-in-out infinite;
 }
@@ -1792,7 +1756,7 @@ body {
     50% { transform: translateY(-20px); }
 }
 
-/* Staggered animation delays for lists */
+/* задержки */
 .stagger-item:nth-child(1) { animation-delay: 0.1s; }
 .stagger-item:nth-child(2) { animation-delay: 0.2s; }
 .stagger-item:nth-child(3) { animation-delay: 0.3s; }
@@ -1800,7 +1764,7 @@ body {
 .stagger-item:nth-child(5) { animation-delay: 0.5s; }
 .stagger-item:nth-child(6) { animation-delay: 0.6s; }
 
-/* Card tilt on hover - perspective effect */
+/* наклон */
 .tilt-card {
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -1810,7 +1774,7 @@ body {
     transform: rotateX(2deg) rotateY(-2deg);
 }
 
-/* Progress bar animation */
+/* прогресс */
 .progress-bar {
     height: 4px;
     background: rgba(255, 255, 255, 0.1);
@@ -1830,12 +1794,12 @@ body {
     50% { opacity: 0.7; }
 }
 
-/* Magnetic button effect */
+/* кнопка */
 .magnetic-btn {
     transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Noise texture overlay */
+/* шум */
 .noise-overlay::before {
     content: '';
     position: absolute;
@@ -1845,7 +1809,7 @@ body {
     pointer-events: none;
 }
 
-/* Border beam effect */
+/* луч */
 .border-beam {
     position: relative;
     overflow: hidden;
@@ -1867,7 +1831,7 @@ body {
     100% { left: 100%; }
 }
 
-/* Dot pattern background */
+/* точки */
 .dot-pattern {
     background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 20px 20px;
