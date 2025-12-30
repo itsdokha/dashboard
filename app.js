@@ -632,15 +632,19 @@ const LastFmAPI = {
             const uniqueTracks = [];
 
             for (const track of data.recenttracks.track) {
-                const key = `${track.name}-${track.artist['#text'] || track.artist.name}`;
+                const trackName = track.name;
+                const artistName = track.artist['#text'] || track.artist.name;
+                const key = `${trackName}-${artistName}`;
                 if (!seen.has(key)) {
                     seen.add(key);
+                    // Create Spotify search URL
+                    const spotifySearchUrl = `https://open.spotify.com/search/${encodeURIComponent(trackName + ' ' + artistName)}`;
                     uniqueTracks.push({
-                        name: track.name,
-                        artist: track.artist['#text'] || track.artist.name,
+                        name: trackName,
+                        artist: artistName,
                         album: track.album['#text'] || '',
                         cover: track.image?.[2]?.['#text'] || track.image?.[1]?.['#text'] || '',
-                        url: track.url,
+                        url: spotifySearchUrl,
                         nowPlaying: track['@attr']?.nowplaying === 'true',
                         playedAt: track.date?.['#text'] || 'Now playing',
                     });
@@ -1302,7 +1306,7 @@ async function renderSpotify() {
                 <div class="track-artist">${track.artist}</div>
             </div>
             <span class="track-time">${track.nowPlaying ? 'Now' : track.playedAt}</span>
-            <a href="${track.url}" class="track-link" target="_blank" rel="noopener" title="Open on Last.fm">
+            <a href="${track.url}" class="track-link" target="_blank" rel="noopener" title="Open on Spotify">
                 ${ICONS.play}
             </a>
         </div>
